@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="260.0" prefWidth="436.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controller">
+   <center>
+       <Pane fx:id="pane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+           <Canvas fx:id="canvas" height="200.0" onMousePressed="#startDraw" onMouseReleased="#endDraw" width="200.0" />
+       </Pane>
+   </center>
+   <top>
+       <VBox prefHeight="48.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+           <MenuBar>
+               <Menu mnemonicParsing="false" text="File">
+                   <MenuItem mnemonicParsing="false" text="Close" />
+               </Menu>
+               <Menu mnemonicParsing="false" text="Edit">
+                   <MenuItem mnemonicParsing="false" text="Delete" />
+               </Menu>
+               <Menu mnemonicParsing="false" text="Help">
+                   <MenuItem mnemonicParsing="false" text="About" />
+               </Menu>
+           </MenuBar>
+           <ToolBar prefHeight="40.0" prefWidth="200.0">
+               <ComboBox fx:id="modeBox" onAction="#changeMode" prefWidth="150.0" />
+               <ColorPicker fx:id="colorPicker" />
+           </ToolBar>
+       </VBox>
+   </top>
+   <right>
+      <ListView fx:id="figureList" prefHeight="200.0" prefWidth="217.0" BorderPane.alignment="CENTER" />
+   </right>
+</BorderPane>
